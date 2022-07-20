@@ -9,13 +9,9 @@ RSpec.describe 'MerchantService' do
       expect(parsed_json).to be_a Array
 
       merchant = parsed_json.first
-      #
-      binding.pry
-      # movie = parsed_json.first
-      #
-      # expect(movie).to include :title, :vote_average
-      # expect(movie[:title]).to be_a(String)
-      # expect(movie[:vote_average]).to be_a(Float)
+
+      expect(merchant).to include :attributes
+      expect(merchant[:attributes][:name]).to be_a(String)
     end
 
   end

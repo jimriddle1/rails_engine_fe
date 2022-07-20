@@ -7,21 +7,21 @@ RSpec.describe 'Merchant IndexPage' do
 
     visit "/merchants"
 
-    expect(page).to have_content("Merchants")
-    expect(page).to have_link("Merchant 1")
-    expect(page).to have_link("Merchant 2")
-    expect(page).to have_link("Merchant 3")
+    # expect(page).to have_content("hello")
+    # binding.pry
+    expect(page).to have_content("Merchants:")
+    expect(page).to have_link("Schroeder-Jerde")
+    expect(page).to have_link("Klein, Rempel and Jones")
+    expect(page).to have_link("Willms and Sons")
 
-    click_link "Merchant 1"
+    click_link "Schroeder-Jerde"
 
-
-
-    expect(current_path).to eq("/merchants/#{Merchant.first.id}")
+    expect(current_path).to eq("/merchants/1")
 
     expect(page).to have_content("Items")
-    expect(page).to have_content("Item 1")
-    expect(page).to have_content("Item 2")
-    expect(page).to have_content("Item 3")
+    expect(page).to have_content("Item Nemo Facere")
+    expect(page).to have_content("Item Expedita Aliquam")
+    expect(page).to have_content("Item Provident At")
 
 
   end
